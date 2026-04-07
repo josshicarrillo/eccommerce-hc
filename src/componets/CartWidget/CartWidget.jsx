@@ -1,5 +1,5 @@
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
-import "./cartWidget.css";
+import "./CartWidget.css";
 
 const CartWidget = () => {
   return (

@@ -13,11 +13,14 @@ const ItemListContainer = ({ saludo }) => {
  useEffect(() => {
    getProducts()
      .then((productsApi) => setProducts(productsApi))
+     .catch((error) => console.log(error))
+    
         
   }, [])
 
 
   return (
+
     <div className="item-list-container">
       <h2 className="container-title">{saludo}</h2>
       <Itemlist products={products} />
