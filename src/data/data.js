@@ -1,28 +1,28 @@
 const products = [
     {
         id: 1,
-        name: "Vestido 1",
-        description: "Vestido elegante para ocasiones especiales",
+        name: "Pantalón",
+        description: "Pantalón deportivo para ocasiones especiales",
         stock: 15,
         price: 10,
-        image:"/img/MODELO-1.jpg"
+        image:"/image/MODELO-1.jpg"
     },
     {
         id: 2,
-        name: "Polo",
-        description: "polo deportivo para actividades al aire libre",
+        name: "Blusa",
+        description: "Blusa elegante para ocasiones especiales",
         stock: 10,
         price: 20,
-        image: "/img/MODELO-2.jpg"
+        image: "/image/MODELO-2.jpg"
     },
 
     {
         id: 3,
-        name: "pantalon",
-        description: "pantalon deportivo para actividades al aire libre",
+        name: "Vestido",
+        description: "vestido elegante para ocasiones especiales",
         stock: 20,
         price: 30,
-        image: "/img/MODELO-3.jpg"
+        image: "/image/MODELO-3.jpg"
     }
 ]
 

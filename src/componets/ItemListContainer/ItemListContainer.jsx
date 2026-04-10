@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"
 import Itemlist from "../ItemList/ItemList"
-import {getProducts } from "../../data/api.js"
+import {getProducts } from "../../data/data"
 import "./itemlistcontainer.css"
 
 
@@ -12,7 +12,7 @@ const ItemListContainer = ({ saludo }) => {
   
  useEffect(() => {
    getProducts()
-     .then((productsApi) => setProducts(productsApi))
+     .then((data) => setProducts(data))
      .catch((error) => console.log(error))
     
         
