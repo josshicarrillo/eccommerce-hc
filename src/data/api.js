@@ -31,5 +31,15 @@ const deleteProductById = (productId) => {
     .catch((error) => console.log(error))
 }
 
+const updateProductById = (productId, updates) => {
+    return fetch(`https://69d9905e26585bd92dd31573.mockapi.io/api/products/${productId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updates)
+    })
+}
 
-export { getProducts, getProductById, addProduct, deleteProductById }
+
+export { getProducts, getProductById, addProduct, deleteProductById, updateProductById }
