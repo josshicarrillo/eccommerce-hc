@@ -26,13 +26,6 @@ const products = [
     }
 ]
 
-const getProducts = () => {
-    return fetch("https://69d9905e26585bd92dd31573.mockapi.io/api/products")
-        .then(response => response.json())
-        .catch(error => {
-            console.error("Error al obtener productos:", error);
-            return products;
-        })
-}  
+
 
 export { getProducts }
