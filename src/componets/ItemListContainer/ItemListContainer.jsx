@@ -7,14 +7,19 @@ import "./itemlistcontainer.css"
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   
   
- useEffect(() => {
-   getProducts()
-     .then((data) => setProducts(data))
-     .catch((error) => console.log(error))
-    
+  useEffect(() => {
+    setLoading(true)
+    getProducts().then(products => {
+      setProducts(products)
+      setLoading(false)
+  console.log("data", products)
+}) .catch(error => {
+    console.error("Error al obtener productos:", error)
+    setLoading(false)
+})
         
   }, [])
 
@@ -23,10 +28,9 @@ const ItemListContainer = ({ saludo }) => {
 
     <div className="item-list-container">
       <h2 className="container-title">{saludo}</h2>
-      <Itemlist products={products} />
       
       {
-        loading === true ? (<div>Cargando...</div>) : (<ItemList products={products} />)
+        loading === true ? (<div>Cargando...</div>) : (<Itemlist products={products} />)
       }
     </div>
   )

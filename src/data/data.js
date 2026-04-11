@@ -1,6 +1,6 @@
 const products = [
     {
-        id: 1,
+        id: "1",
         name: "Pantalón",
         description: "Pantalón deportivo para ocasiones especiales",
         stock: 15,
@@ -8,7 +8,7 @@ const products = [
         image:"/image/MODELO-1.jpg"
     },
     {
-        id: 2,
+        id: "2",
         name: "Blusa",
         description: "Blusa elegante para ocasiones especiales",
         stock: 10,
@@ -17,7 +17,7 @@ const products = [
     },
 
     {
-        id: 3,
+        id: "3",
         name: "Vestido",
         description: "vestido elegante para ocasiones especiales",
         stock: 20,
@@ -27,12 +27,12 @@ const products = [
 ]
 
 const getProducts = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-        }, 3000)
-
-    })
+    return fetch("https://69d9905e26585bd92dd31573.mockapi.io/api/products")
+        .then(response => response.json())
+        .catch(error => {
+            console.error("Error al obtener productos:", error);
+            return products;
+        })
 }  
 
 export { getProducts }
