@@ -9,13 +9,13 @@ const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   
-  const newProduct = {
+  /*const newProduct = {
     name: "Camisa",
     description: "Camisa elegante para ocasiones especiales",
     stock: 25,
     price: 40,
-    image: "/image/PRODUCTO-1.jpg"
-  }
+    image: "/image/PRODUCTO-2.jpg"
+  }*/
   
   useEffect(() => {
     setLoading(true)
@@ -29,7 +29,7 @@ const ItemListContainer = ({ saludo }) => {
         .finally(() => {
             setLoading(false)
         })
-    getProductById(3)
+    getProductById()
     .then((productsApi)=> console.log (productsApi))
       .catch(error => {
         console.error("Error al obtener productos:", error)
@@ -42,7 +42,7 @@ const ItemListContainer = ({ saludo }) => {
   }
 
   const clickEventoBorrar = () => {
-    deleteProductById(3)
+    deleteProductById()
     .then((productsApi) => console.log(productsApi))
       .catch((error) => console.log(error))
   }
@@ -52,7 +52,7 @@ const ItemListContainer = ({ saludo }) => {
     <div className="item-list-container">
       <h2 className="container-title">{saludo}</h2>
       <button onClick={clickEvento}>Agregar nuevo producto</button>
-      <button onClick={clickEvento}>Borrar</button>
+      <button onClick={clickEventoBorrar}>Borrar</button>
       
       {
         loading === true ? (<div>Cargando...</div>) : (<Itemlist products={products} />)
